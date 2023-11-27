@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function TodoItem({ item, data, setData }) {
   const updateStatus = (element) => {
     setData(data
@@ -73,3 +75,9 @@ export default function TodoItem({ item, data, setData }) {
     </>
   );
 }
+
+TodoItem.propTypes = {
+  item: PropTypes.oneOfType(['array']).isRequired,
+  data: PropTypes.arrayOf('object').isRequired,
+  setData: PropTypes.func.isRequired,
+};
