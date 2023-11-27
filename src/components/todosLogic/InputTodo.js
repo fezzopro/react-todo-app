@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function InputTodo({ data, setData }) {
   const addNewTask = (task) => {
     setData([...data, task]);
@@ -30,3 +32,8 @@ export default function InputTodo({ data, setData }) {
     </>
   );
 }
+
+InputTodo.propTypes = {
+  data: PropTypes.oneOfType(['array']).isRequired,
+  setData: PropTypes.func.isRequired,
+};
